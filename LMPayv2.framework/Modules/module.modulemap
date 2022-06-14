@@ -1,0 +1,6 @@
+framework module LMPayv2 {
+  umbrella header "LMPayv2.h"
+
+  export *
+  module * { export * }
+}
