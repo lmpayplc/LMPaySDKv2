@@ -46,7 +46,7 @@ SDK支持两种支付交互：
 use_frameworks!
 
 target 'YourTarget' do
-  pod 'LMPay'
+  pod 'LMPayv2'
 end
 ```
 然后执行 `pod install`
@@ -76,14 +76,14 @@ end
 ```
 <key>LSApplicationQueriesSchemes</key>
 <array>
-  <string>NewLeMaPayApp</string>
+  <string>NewLeMaPayAppv2</string>
 </array>
 ```
 
 ### 3. 调用支付接口
 
 ```
-LMPay.shareInstance().initForLema(
+LMPayv2.shareInstance().initForLema(
     withData: payData as Any,
     appType: "order",
     urlSchemes: "YourCustomSchemes",
@@ -116,13 +116,13 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
    guard let url = URLContexts.first?.url else {
       return
    }
-   LMPay.shareInstance().handleOpen(url)
+   LMPayv2.shareInstance().handleOpen(url)
 }
 ```
 支持 iOS 13 以下的应用，在 `UIApplicationDelegate` 以下回调中处理结果
 ```
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-   return LMPay.shareInstance().handleOpen(url)
+   return LMPayv2.shareInstance().handleOpen(url)
 }
 ```
 
