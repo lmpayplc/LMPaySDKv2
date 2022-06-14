@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     s.source            = { :git => "https://github.com/lmpayplc/LMPaySDKv2.git", :tag => "#{s.version}" }
 
     s.ios.deployment_target = '10.0'
-    s.vendored_frameworks = 'LMPayv2.framework'
+    s.vendored_frameworks = 'Frameworks/LMPayv2.framework'
     s.frameworks          = 'WebKit'
     s.dependency          "MBProgressHUD"
 
